@@ -62,7 +62,7 @@
         <!--Log in-->
         <scene sceneID="q1f-kx-3Nb">
             <objects>
-                <viewController id="g9M-ju-qLW" sceneMemberID="viewController">
+                <viewController id="g9M-ju-qLW" customClass="LoginViewController" customModule="FireMSN" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sI7-nh-X9n"/>
                         <viewControllerLayoutGuide type="bottom" id="P7V-oN-pKH"/>
@@ -83,19 +83,24 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8hp-b5-uIt">
                                 <rect key="frame" x="0.0" y="406" width="375" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="LogIn:" destination="g9M-ju-qLW" eventType="touchUpInside" id="Fxs-aB-Mwt"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Log in" id="3il-VP-lTR"/>
                     <connections>
+                        <outlet property="correo" destination="z31-aa-Z1u" id="d4h-Nm-OXw"/>
+                        <outlet property="password" destination="xuT-Bc-FQk" id="ht6-kx-yrW"/>
                         <segue destination="zN8-Gd-9wk" kind="show" identifier="GoToChat" id="aC5-kd-824"/>
                     </connections>
                 </viewController>
@@ -145,7 +150,7 @@
                     <connections>
                         <outlet property="correo" destination="bUz-Bd-zPM" id="6Gm-Ev-AsW"/>
                         <outlet property="password" destination="ldQ-Yg-i0J" id="qc9-ay-ogA"/>
-                        <segue destination="zN8-Gd-9wk" kind="show" id="iTz-h7-gIN"/>
+                        <segue destination="zN8-Gd-9wk" kind="show" identifier="GoToChat" id="iTz-h7-gIN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nG2-X4-x31" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -164,18 +169,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezP-hr-jxQ">
-                                <rect key="frame" x="129" y="68" width="116" height="75"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JXQ-c0-SDU">
+                                <rect key="frame" x="0.0" y="64" width="375" height="551"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5rn-ox-OOI">
+                                <rect key="frame" x="16" y="623" width="343" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jMl-tQ-njs">
+                                        <rect key="frame" x="8" y="3" width="253" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="0.99293836810000002" blue="0.94764432730000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWe-jc-cfA">
+                                        <rect key="frame" x="282" y="3" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Send"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.74117647060000003" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Chat" id="xc4-W6-rp3">
-                        <barButtonItem key="rightBarButtonItem" title="Log out" id="iWn-9m-Q6V"/>
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="iWn-9m-Q6V">
+                            <connections>
+                                <action selector="LogOutPressed:" destination="zN8-Gd-9wk" id="AS5-s7-szO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMJ-aI-trY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -202,6 +230,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="iTz-h7-gIN"/>
+        <segue reference="aC5-kd-824"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController {
 
+    
+    @IBOutlet weak var correo: UITextField!
+    @IBOutlet weak var password: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +25,17 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func LogIn(_ sender: UIButton) {
+        Auth.auth().signIn(withEmail: correo.text!, password: password.text!) { (user, error) in
+            if error != nil{
+                print(error!)
+            }else{
+                print("Succesfull")
+                self.performSegue(withIdentifier: "GoToChat", sender: self)
+            }
+        }
+        
+    }
 
     /*
     // MARK: - Navigation
