@@ -205,6 +205,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="TableView" destination="JXQ-c0-SDU" id="b23-X5-OzY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMJ-aI-trY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,6 +233,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="aC5-kd-824"/>
+        <segue reference="iTz-h7-gIN"/>
     </inferredMetricsTieBreakers>
 </document>
