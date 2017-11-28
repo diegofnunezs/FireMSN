@@ -17,6 +17,8 @@
 		8DAB8C6D1FC65CC9006CE240 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB8C6C1FC65CC9006CE240 /* Assets.xcassets */; };
 		8DAB8C701FC65CC9006CE240 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB8C6E1FC65CC9006CE240 /* LaunchScreen.storyboard */; };
 		8DAB8C781FC65D62006CE240 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DAB8C771FC65D62006CE240 /* GoogleService-Info.plist */; };
+		8DB6AEB71FCCF9A000D61E41 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB6AEB51FCCF9A000D61E41 /* CustomTableViewCell.swift */; };
+		8DB6AEB81FCCF9A000D61E41 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DB6AEB61FCCF9A000D61E41 /* CustomTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		8DAB8C6F1FC65CC9006CE240 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DAB8C711FC65CC9006CE240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DAB8C771FC65D62006CE240 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8DB6AEB51FCCF9A000D61E41 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		8DB6AEB61FCCF9A000D61E41 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,8 @@
 				8D7AADB31FC9F4C800CC9391 /* LoginViewController.swift */,
 				8D7AADB51FC9F4DB00CC9391 /* RegisterViewController.swift */,
 				8D7AADB71FC9F4F300CC9391 /* ChatViewController.swift */,
+				8DB6AEB51FCCF9A000D61E41 /* CustomTableViewCell.swift */,
+				8DB6AEB61FCCF9A000D61E41 /* CustomTableViewCell.xib */,
 			);
 			path = FireMSN;
 			sourceTree = "<group>";
@@ -165,6 +171,7 @@
 				8DAB8C701FC65CC9006CE240 /* LaunchScreen.storyboard in Resources */,
 				8DAB8C781FC65D62006CE240 /* GoogleService-Info.plist in Resources */,
 				8DAB8C6D1FC65CC9006CE240 /* Assets.xcassets in Resources */,
+				8DB6AEB81FCCF9A000D61E41 /* CustomTableViewCell.xib in Resources */,
 				8DAB8C6B1FC65CC9006CE240 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DB6AEB71FCCF9A000D61E41 /* CustomTableViewCell.swift in Sources */,
 				8D7AADB41FC9F4C800CC9391 /* LoginViewController.swift in Sources */,
 				8DAB8C681FC65CC9006CE240 /* ViewController.swift in Sources */,
 				8DAB8C661FC65CC9006CE240 /* AppDelegate.swift in Sources */,

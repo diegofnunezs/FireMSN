@@ -9,13 +9,36 @@
 import UIKit
 import Firebase
 
-class ChatViewController: UIViewController {
-
+class ChatViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    @IBOutlet weak var TableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        TableView.delegate = self
+        TableView.dataSource = self
+        TableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomMessageCell")
+        
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = TableView.dequeueReusableCell(withIdentifier: "CustomMessageCell", for: indexPath) as! CustomTableViewCell
+        
+        let messageArray = ["Cell 01", "Cell 02","Cell 03","Cell 04"]
+        cell.messageLabel.text = messageArray[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 3
+    }
+    
+    
+    
+    
     @IBAction func LogOutPressed(_ sender: UIBarButtonItem) {
         do {
             try Auth.auth().signOut()
